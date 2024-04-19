@@ -1,3 +1,10 @@
+<div align="center">
+  <h1 style="color:#ff9900">MCCrasherCG</h1>
+  <p>A command generator for mcstresser with a few other features</p>
+</div>
+
+
+
 ## Installation:
 
 1. **Clone this repository** to your local machine.

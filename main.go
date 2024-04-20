@@ -1,5 +1,3 @@
-package main
-
 import (
 	"fmt"
 	"log"
@@ -153,7 +151,7 @@ func main() {
 	http.HandleFunc("/stop", handleStop)
 
 	log.Println("Starting server at :8080...")
-	go logToConsole() // Start a goroutine to log to console
+	go logToConsole()
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

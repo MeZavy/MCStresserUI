@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://via.placeholder.com/200" alt="Minecraft Bot Control Panel">
+  <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/9b/Dirt_JE2_BE2.png/revision/latest?cb=20200309195232" alt="Minecraft Bot Control Panel">
 </p>
 <h1 align="center">Minecraft Bot Control Panel</h1>
 

@@ -1,20 +1,48 @@
-<div align="center">
-  <h1 style="color:#ff9900">MCCrasherCG</h1>
-  <p>A command generator for mcstresser with a few other features</p>
-</div>
+<p align="center">
+  <img src="https://via.placeholder.com/200" alt="Minecraft Bot Control Panel">
+</p>
+<h1 align="center">Minecraft Bot Control Panel</h1>
 
+This project provides a simple web-based control panel for managing Minecraft bots. You can start multiple bots simultaneously with custom parameters such as the server address, username, and number of clients.
 
+## Features
 
-## Installation:
+- Start multiple Minecraft bots with customizable parameters.
+- Stop all running bots.
+- View console output from the bots in real-time.
 
-1. **Clone this repository** to your local machine.
-2. **Navigate** to the directory where you cloned the repository.
-3. Run `npm install` to **install** the necessary dependencies.
-4. **Start** using MCCrasherCG by running `npm start`.
+## Prerequisites
 
-## Usage:
+- Go (Golang) installed on your machine.
+- Basic knowledge of Go programming.
 
-1. **Launch MCCrasherCG** using the installation instructions above.
-2. **Customize your command parameters** as needed.
-3. **Generate commands** tailored for mcstresser with a click of a button.
-4. **Copy the generated commands** and use them in your testing environment.
+## How to Install and Use
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/yourusername/minecraft-bot-control-panel.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd minecraft-bot-control-panel
+   ```
+
+3. Run the server:
+
+   ```bash
+   go run main.go
+   ```
+
+4. Open your web browser and go to `http://localhost:8080` to access the control panel.
+
+5. Enter the desired parameters (Protocol Version, Server Address, Username, Number of Clients) and click "Start Bots" to start the bots.
+
+6. To stop the bots, click "Stop Bots".
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```

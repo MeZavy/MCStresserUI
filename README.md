@@ -1,48 +1,36 @@
-<p align="center">
-  <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/9b/Dirt_JE2_BE2.png/revision/latest?cb=20200309195232" alt="Minecraft Bot Control Panel">
-</p>
-<h1 align="center">Minecraft Bot Control Panel</h1>
+# MCstress
+Maximum intensity stress testing utility for Minecraft servers
 
-This project provides a simple web-based control panel for managing Minecraft bots. You can start multiple bots simultaneously with custom parameters such as the server address, username, and number of clients.
+This tool works on all versions of Minecraft after 1.7.2 excluding CraftBukkit and derivatives (Spigot, Paper, etc.).
 
-## Features
+MCstress works by creating thousands of simultaneous bot users (default 2048) and repeatedly logging them into a target server.
 
-- Start multiple Minecraft bots with customizable parameters.
-- Stop all running bots.
-- View console output from the bots in real-time.
+With thousands of bots, this quickly overwhelms the network thread on the server.
+This causes currently online players to be disconnected, or in extreme situations, crashes the entire server.
 
-## Prerequisites
+With less bots and/or by running MCstress in short bursts, you can cause intense lag spikes resulting in huge rubber-banding for server players.
 
-- Go (Golang) installed on your machine.
-- Basic knowledge of Go programming.
+In some cases a server will attempt to validate the usernames of the bots joining.
+Due to how many there are and how frequent they're joining, the Mojang session server will rate limit the server's address, preventing players from reconnecting for some time after stress testing.
 
-## How to Install and Use
+## Installation
+- Install go, instructions can be found [here](https://www.google.com/search?q=install+go)
+- Then clone this repo `git clone https://github.com/logykk/mcstress`
+- Build it `cd mcstress; go build -o mcstress .`
 
-1. Clone the repository to your local machine:
+## Usage
+You need to provide at least the server's IP, port and protocol version
 
-   ```bash
-   git clone https://github.com/yourusername/minecraft-bot-control-panel.git
-   ```
+`./mcstress -address <IP>:<port> -protocol <protocol>`
 
-2. Navigate to the project directory:
+### Options
+| Name      | Description                                     |
+| --------- | ----------------------------------------------- |
+| -address  | Server IP:port                                  |
+| -username | Base username for the bots                      |
+| -uuid     | UUID for bots (1.19.2) only                     |
+| -protocol | Protocol version of server                      |
+| -number   | Numer of bots running in parallel               |
+| -wait     | Milliseconds each bot waits before reconnecting |
 
-   ```bash
-   cd minecraft-bot-control-panel
-   ```
-
-3. Run the server:
-
-   ```bash
-   go run main.go
-   ```
-
-4. Open your web browser and go to `http://localhost:8080` to access the control panel.
-
-5. Enter the desired parameters (Protocol Version, Server Address, Username, Number of Clients) and click "Start Bots" to start the bots.
-
-6. To stop the bots, click "Stop Bots".
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+To get the protocol version from a release version check [wiki.vg](https://wiki.vg/Protocol_version_numbers)
